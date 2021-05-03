@@ -7,7 +7,7 @@ gcc -Icache/ -IC:\Users\K\nim-1.4.4\lib -Ilib/cSpecOps\mathOps -Ilib/cSpecOps/lo
 createDLL
 gcc -c  .\lib\cSpecOps\logOps\cLogOps.c -o obj\cLogOps.o
 gcc -c  .\lib\cSpecOps\mathOps\cMathOps.c -o obj\cMathOps.o
-gcc -shared -o .\bin\lib\cSpecOps.dll .\obj\cMathOps.o .\obj\cLogOps.o
+gcc -shared -o .\bin\cSpecOps.dll .\obj\cMathOps.o .\obj\cLogOps.o
 
 */
 #include "prog.h"
