@@ -4,7 +4,7 @@ switch("cincludes","../lib/cSpecOps/logOps")
 #switch("os","android")
 #switch("cpu","arm64")
 
-switch("define","debug")
-#switch("define","codegen")
+#switch("define","debug")
+switch("define","codegen")
 
 switch("outdir", "bin")

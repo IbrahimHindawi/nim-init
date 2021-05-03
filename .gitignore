@@ -1,5 +1,6 @@
 nimcache/
 nimblecache/
+cache/
 htmldocs/
 bin/*.exe
 *.dll
