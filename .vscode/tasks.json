@@ -8,7 +8,7 @@
                 "c",
                 "-d:dynamic",
                 "-r",
-                "Sources/${fileBasename}"
+                "SourcesNim/${fileBasename}"
             ],
             "options": {
                 "cwd": "${workspaceRoot}"
@@ -25,8 +25,9 @@
             "args": [
                 "compile",
                 "-g",
+                "-d:dynamic",
                 "--debugger:native",
-                "Sources/${fileBasename}"
+                "SourcesNim/${fileBasename}"
             ],
             "options": {
                 "cwd": "${workspaceRoot}"
@@ -39,13 +40,11 @@
             "args": [
                 "compile",
                 "--compileOnly",
-                "--nimcache:cache",
-                "-d:release",
-                "-d:danger",
+                "--nimcache:cache",               
                 "-d:codegen",
                 "--noMain",
                 "--header:${fileBasename}",
-                "Sources/${fileBasename}"
+                "SourcesNim/${fileBasename}"
             ],
             "options": {
                 "cwd": "${workspaceRoot}"

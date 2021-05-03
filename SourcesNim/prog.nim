@@ -1,5 +1,5 @@
-import nLogOps
-import nMathOps
+import nSpecOps/nLogOps
+import nSpecOps/nMathOps
 
 proc nim_enter() {.exportc.} = 
   var x =  mathOpZero(32)
