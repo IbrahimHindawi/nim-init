@@ -10,4 +10,4 @@ proc nim_enter() {.exportc.} =
   var y = mathOpZero(64)
   echo y
 
-nim_enter()
+#nim_enter()
