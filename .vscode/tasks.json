@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Nim: Build & Run",
+            "command": "nim",
+            "args": [
+                "c",
+                "-r",
+                "Sources/${fileBasename}"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Nim: Build Debug",
+            "command": "nim",
+            "args": [
+                "compile",
+                "-g",
+                "--debugger:native",
+                "Sources/${fileBasename}"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "type": "shell"
+        },
+        {
+            "label": "Nim: Code Gen",
+            "command": "nim",
+            "args": [
+                "compile",
+                "--compileOnly",
+                "--nimcache:cache",
+                "-d:release",
+                "-d:danger",
+                "--noMain",
+                "--header:${fileBasename}",
+                "Sources/${fileBasename}"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "type": "shell",
+            "problemMatcher": []
+        }
+    ]
+}
