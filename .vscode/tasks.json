@@ -6,6 +6,7 @@
             "command": "nim",
             "args": [
                 "c",
+                "-d:dynamic",
                 "-r",
                 "Sources/${fileBasename}"
             ],
@@ -19,7 +20,7 @@
             }
         },
         {
-            "label": "Nim: Build Debug",
+            "label": "Nim: Pre-Build Debug",
             "command": "nim",
             "args": [
                 "compile",
@@ -41,6 +42,7 @@
                 "--nimcache:cache",
                 "-d:release",
                 "-d:danger",
+                "-d:codegen",
                 "--noMain",
                 "--header:${fileBasename}",
                 "Sources/${fileBasename}"

@@ -4,8 +4,8 @@
         {
             "type": "lldb",
             "request": "launch",
-            "name": "Nim: Debug",
-            "preLaunchTask": "Nim: Build Debug",
+            "name": "Nim: Run Debugger",
+            "preLaunchTask": "Nim: Pre-Build Debug",
             "program": "bin/${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceRoot}/bin/", //workspaceFolder

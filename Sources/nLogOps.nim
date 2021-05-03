@@ -5,8 +5,8 @@ elif defined(linux):
 elif defined(macosx):
   const libExt = ".dylib"
 
-when defined(debug):
-  {.push dynlib:"cSpecOps.dylib".}
+when defined(dynamic):
+  {.push dynlib:"cSpecOps"&libExt.}
 elif defined(codegen):
   {.push header:"cLogOps.h".}
 

@@ -1,7 +1,3 @@
-#[
-  debugger & codegen setup
-]#
-
 import nLogOps
 import nMathOps
 
