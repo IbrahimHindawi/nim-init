@@ -51,6 +51,30 @@
             },
             "type": "shell",
             "problemMatcher": []
+        },
+        {
+            "label": "Generate Library",
+            "command": "nim",
+            "args": [
+                "Scripts/genlib.nims"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "type": "shell",
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean up",
+            "command": "nim",
+            "args": [
+                "Scripts/clean.nims"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "type": "shell",
+            "problemMatcher": []
         }
     ]
 }
