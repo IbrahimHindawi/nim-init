@@ -5,7 +5,7 @@ import vertexstructure
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11
 
 type 
-  Kinc_g4_usage* {.bycopy.} = enum
+  kinc_g4_usage_t* {.bycopy.} = enum
     KINC_G4_USAGE_STATIC,
     KINC_G4_USAGE_DYNAMIC,
     KINC_G4_USAGE_READABLE
@@ -16,7 +16,7 @@ type
       #echo "codegen: definition omitted!"
 
 
-proc kinc_g4_vertex_buffer_init*(buffer: ptr kinc_g4_vertex_buffer_t, count:cint, structure: ptr kinc_g4_vertex_structure_t, usage: Kinc_g4_usage, instance_data_step_rate:cint)
+proc kinc_g4_vertex_buffer_init*(buffer: ptr kinc_g4_vertex_buffer_t, count:cint, structure: ptr kinc_g4_vertex_structure_t, usage: kinc_g4_usage_t, instance_data_step_rate:cint)
     {.importc:"kinc_g4_vertex_buffer_init".}
 proc kinc_g4_vertex_buffer_destroy*(buffer: ptr kinc_g4_vertex_buffer_t)
     {.importc:"kinc_g4_vertex_buffer_destroy".}

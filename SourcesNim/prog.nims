@@ -17,6 +17,9 @@ echo "executing nimscript"
 # cpu architectures
 #switch("cpu","arm64")
 
+# compiler
+switch("cc","vcc")
+
 #[
   compile time switching
 ]#
