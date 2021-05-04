@@ -4,12 +4,12 @@ initialize("kinc/graphics4/vertexbuffer.h","Kinc")
 import vertexstructure
 
 type 
-    Kinc_g4_usage* {.importc:"enum kinc_g4_usage".} = enum
+    Kinc_g4_usage* {.bycopy.} = enum
         KINC_G4_USAGE_STATIC,
         KINC_G4_USAGE_DYNAMIC,
         KINC_G4_USAGE_READABLE
     kinc_g4_vertex_buffer_t* 
-        {.importc:"kinc_g4_vertex_buffer_t".} = object
+        {.bycopy.} = object
 
 
 proc kinc_g4_vertex_buffer_init*(buffer: ptr kinc_g4_vertex_buffer_t, count:cint, structure: ptr kinc_g4_vertex_structure_t, usage: Kinc_g4_usage, instance_data_step_rate:cint)

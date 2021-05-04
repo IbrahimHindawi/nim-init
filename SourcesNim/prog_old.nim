@@ -15,14 +15,15 @@
 
 import ptrops
 
-import kinc/graphics4/vertexstructure
-import kinc/graphics4/vertexbuffer
-import kinc/graphics4/graphics
-import kinc/graphics4/indexbuffer
-import kinc/graphics4/shader
-import kinc/graphics4/pipeline
-import kinc/system
-import kinc/io/filereader
+import 
+  kinc/graphics4/vertexbuffer,
+  kinc/graphics4/vertexstructure,
+  kinc/graphics4/indexbuffer,
+  kinc/graphics4/graphics,
+  kinc/graphics4/shader,
+  kinc/graphics4/pipeline,
+  kinc/io/filereader,
+  kinc/system
 
 var 
   vertex_shader: kinc_g4_shader_t
@@ -141,4 +142,4 @@ proc nim_start() {.exportc.} =
 
   kinc_start()
 
-nim_start()
+#nim_start()

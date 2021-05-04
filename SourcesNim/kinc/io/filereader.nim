@@ -7,7 +7,7 @@ const
 
 
 type 
-    kinc_file_reader_t *{.importc: "kinc_file_reader_t".} = object
+    kinc_file_reader_t *{.bycopy.} = object
 
 proc kinc_file_reader_open*(reader: ptr kinc_file_reader_t, filename:cstring, tipe:cint) :bool
     {.importc:"kinc_file_reader_open".}

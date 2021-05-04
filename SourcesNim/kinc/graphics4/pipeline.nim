@@ -15,7 +15,7 @@ import shader
 
 
 type
-    KincG4_blending_operation* {.importc:"enum kinc_g4_blending_operation_t".} = enum
+    KincG4_blending_operation* {.bycopy.} = enum
        kincG4BlendOne,
        kincG4BlendZero,
        kincG4BlendSourceAlpha,
@@ -26,7 +26,7 @@ type
        kincG4BlendDestColor,
        kincG4BlendINVSourceColor,
        kincG4BlendINVDestColor
-    KincG4_compare_mode* {.importc:"enum kinc_g4_compare_mode_t".} = enum
+    KincG4_compare_mode* {.bycopy.} = enum
        kincG4CompareALWAYS,
        kincG4CompareNEVER,
        kincG4CompareEQUAL,
@@ -35,11 +35,11 @@ type
        kincG4CompareLESSEqual,
        kincG4CompareGREATER,
        kincG4CompareGREATEREqual
-    KincG4_cull_mode* {.importc:"enum kinc_g4_cull_mode_t".} = enum
+    KincG4_cull_mode* {.bycopy.} = enum
        kincG4CullClockwise,
        kincG4CullCounterClockwise,
        kincG4CullNothing
-    KincG4_stencil_action* {.importc:"enum kinc_g4_stencil_action_t".} = enum
+    KincG4_stencil_action* {.bycopy.} = enum
        kincG4StencilKEEP,
        kincG4StencilZERO,
        kincG4StencilREPLACE,
@@ -49,7 +49,7 @@ type
        kincG4StencilDECREMENTWrap,
        kincG4StencilINVERT
 
-    kinc_g4_pipeline_t* {.importc:"kinc_g4_pipeline_t".} = object
+    kinc_g4_pipeline_t* {.bycopy.} = object
         input_layout*:array[16, ptr kinc_g4_vertex_structure_t]
         vertex_shader*:ptr kinc_g4_shader_t
         fragment_shader*:ptr kinc_g4_shader_t

@@ -30,7 +30,11 @@ echoSector "generating dynamic library"
 exec "gcc -shared -o ./bin/cSpecOps" & libExt & " ./obj/cMathOps.o ./obj/cLogOps.o"
 
 echoSector "compiling nim code-gen with gcc"
-exec "gcc -Icache/ -IC:/Users/Administrator/nim-1.4.2/lib -Ilib/cSpecOps/mathOps -Ilib/cSpecOps/logOps cache/@mprog.nim.c cache/stdlib_io.nim.c cache/stdlib_system.nim.c lib/cSpecOps/mathOps/cMathOps.c lib/cSpecOps/logOps/cLogOps.c Sources/main.c -o bin/prog.exe"
+exec "gcc -Icache/ -IC:/Users/Administrator/nim-1.4.6/lib " &
+" -Ilib/cSpecOps/mathOps -Ilib/cSpecOps/logOps -Icache/prog.h " &
+" cache/@mprog.nim.c cache/stdlib_io.nim.c cache/stdlib_system.nim.c cache/@mkinc@sgraphics4@sgraphics.nim.c " & 
+" lib/cSpecOps/mathOps/cMathOps.c lib/cSpecOps/logOps/cLogOps.c " & 
+" Sources/main.c -o bin/prog.exe"
 
 echoSector "running executable"
 exec ".\\bin\\prog.exe"

@@ -3,9 +3,9 @@ initialize("kinc/graphics4/indexbuffer.h","Kinc")
 
 type 
     kinc_g4_index_buffer_t* 
-        {.importc:"kinc_g4_index_buffer_t".} = object
+        {.bycopy.} = object
 
-    kinc_g4_index_buffer_format_t* {.size: sizeof(cint).} = enum
+    kinc_g4_index_buffer_format_t* {.bycopy.} = enum
         KINC_G4_INDEX_BUFFER_FORMAT_32BIT, KINC_G4_INDEX_BUFFER_FORMAT_16BIT
 #  kinc_g4_index_buffer_t* {.bycopy.} = object
 #    impl*: kinc_g4_index_buffer_impl_t    
