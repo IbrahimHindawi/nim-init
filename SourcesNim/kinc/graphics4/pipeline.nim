@@ -13,11 +13,7 @@ import rendertarget
 #    Kinc_g4_constant_location* {.importc:"kinc_g4_constant_location_t", header: hhkCLoc.} = object
 #    Kinc_g4_texture_unit* {.importc:"kinc_g4_texture_unit_t", header: hhkCLoc.} = object
 
-# when defined(Direct3D11):
-import ../../kincbackends/graphics4/Direct3D11/Direct3D11
-# elif defined(OpenGL):
-# import ../../kincbackends/graphics4/OpenGL/OpenGL
-
+import ../../kincbackends/graphics4/graphics4
 
 type
   KincG4_blending_operation* {.bycopy.} = enum
@@ -98,11 +94,8 @@ type
     # when defined(codegen):
       #echo "codegen: definition omitted!"
 
-proc kinc_g4_pipeline_init*(state: ptr kinc_g4_pipeline_t)
-    {.importc: "kinc_g4_pipeline_init".}
-proc kinc_g4_pipeline_destroy*(state: ptr kinc_g4_pipeline_t)
-    {.importc: "kinc_g4_pipeline_destroy".}
-proc kinc_g4_pipeline_compile*(state: ptr kinc_g4_pipeline_t)
-    {.importc: "kinc_g4_pipeline_compile".}
+proc kinc_g4_pipeline_init*(state: ptr kinc_g4_pipeline_t) {.importc: "kinc_g4_pipeline_init".}
+proc kinc_g4_pipeline_destroy*(state: ptr kinc_g4_pipeline_t) {.importc: "kinc_g4_pipeline_destroy".}
+proc kinc_g4_pipeline_compile*(state: ptr kinc_g4_pipeline_t) {.importc: "kinc_g4_pipeline_compile".}
 #proc kinc_g4_pipeline_get_constant_location*(state: ptr kinc_g4_pipeline_t, name:cstring):Kinc_g4_constant_location {.importc: "kinc_g4_pipeline_get_constant_location".}
 #proc kinc_g4_pipeline_get_texture_unit*(state: ptr kinc_g4_pipeline_t, name:cstring):Kinc_g4_texture_unit {.importc: "kinc_g4_pipeline_get_texture_unit".}

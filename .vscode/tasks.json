@@ -43,6 +43,7 @@
                 "compile",
                 "-g",
                 "-d:dynamic",
+                "-d:OpenGL",
                 "--debugger:native",
                 "SourcesNim/${fileBasename}"
             ],

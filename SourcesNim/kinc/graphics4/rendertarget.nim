@@ -1,10 +1,11 @@
 import ../../utils/comptime
 initialize("kinc/graphics4/rendertarget.h","Kinc")
 
-# when defined(Direct3D11):
-import ../../kincbackends/graphics4/Direct3D11/Direct3D11
-# elif defined(OpenGL):
-#import ../../kincbackends/graphics4/OpenGL/OpenGL
+import ../../kincbackends/graphics4/graphics4
+
+type
+  kinc_g4_texture_unit_t* {.bycopy.} = object
+    impl*: kinc_g4_texture_unit_impl_t
 
 type
   kinc_g4_render_target_format_t* {.size: sizeof(cint).} = enum
@@ -22,23 +23,36 @@ type
     contextId*: cint
     isCubeMap*: bool
     isDepthAttachment*: bool
-    when defined(dynamic):
-      impl*: kinc_g4_render_target_impl_t
-    elif defined(codegen):
-      # nothing . . . 
+    impl*: kinc_g4_render_target_impl_t
 
-proc kinc_g4_render_target_init*(renderTarget: ptr kinc_g4_render_target_t, width: cint, height: cint, depthBufferBits: cint, 
-  antialiasing: bool, format: kinc_g4_render_target_format_t, stencilBufferBits: cint, contextId: cint)
-  {.importc:"kinc_g4_render_target_init".}
 
-# void kinc_g4_render_target_init_cube(kinc_g4_render_target_t *renderTarget, int cubeMapSize, int depthBufferBits, bool antialiasing,
-#                                      kinc_g4_render_target_format_t format, int stencilBufferBits, int contextId);
 
-proc kinc_g4_render_target_destroy*(renderTarget: ptr kinc_g4_render_target_t)
-  {.importc:"kinc_g4_render_target_init".}
-
-# void kinc_g4_render_target_use_color_as_texture(kinc_g4_render_target_t *renderTarget, kinc_g4_texture_unit_t unit);
-# void kinc_g4_render_target_use_depth_as_texture(kinc_g4_render_target_t *renderTarget, kinc_g4_texture_unit_t unit);
-# void kinc_g4_render_target_set_depth_stencil_from(kinc_g4_render_target_t *renderTarget, kinc_g4_render_target_t *source);
-# void kinc_g4_render_target_get_pixels(kinc_g4_render_target_t *renderTarget, uint8_t *data);
-# void kinc_g4_render_target_generate_mipmaps(kinc_g4_render_target_t *renderTarget, int levels);
+proc kinc_g4_render_target_init*(renderTarget: ptr kinc_g4_render_target_t;
+                                width: cint; height: cint; depthBufferBits: cint;
+                                antialiasing: bool;
+                                format: kinc_g4_render_target_format_t;
+                                stencilBufferBits: cint; contextId: cint) {.
+    importc: "kinc_g4_render_target_init".}
+proc kinc_g4_render_target_init_cube*(renderTarget: ptr kinc_g4_render_target_t;
+                                     cubeMapSize: cint; depthBufferBits: cint;
+                                     antialiasing: bool;
+                                     format: kinc_g4_render_target_format_t;
+                                     stencilBufferBits: cint; contextId: cint) {.
+    importc: "kinc_g4_render_target_init_cube".}
+proc kinc_g4_render_target_destroy*(renderTarget: ptr kinc_g4_render_target_t) {.
+    importc: "kinc_g4_render_target_destroy".}
+proc kinc_g4_render_target_use_color_as_texture*(
+    renderTarget: ptr kinc_g4_render_target_t; unit: kinc_g4_texture_unit_t) {.
+    importc: "kinc_g4_render_target_use_color_as_texture".}
+proc kinc_g4_render_target_use_depth_as_texture*(
+    renderTarget: ptr kinc_g4_render_target_t; unit: kinc_g4_texture_unit_t) {.
+    importc: "kinc_g4_render_target_use_depth_as_texture".}
+proc kinc_g4_render_target_set_depth_stencil_from*(
+    renderTarget: ptr kinc_g4_render_target_t; source: ptr kinc_g4_render_target_t) {.
+    importc: "kinc_g4_render_target_set_depth_stencil_from".}
+proc kinc_g4_render_target_get_pixels*(renderTarget: ptr kinc_g4_render_target_t;
+                                      data: ptr uint8) {.
+    importc: "kinc_g4_render_target_get_pixels".}
+proc kinc_g4_render_target_generate_mipmaps*(
+    renderTarget: ptr kinc_g4_render_target_t; levels: cint) {.
+    importc: "kinc_g4_render_target_generate_mipmaps".}    

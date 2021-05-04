@@ -5,7 +5,8 @@ import pipeline, ../math/matrix, texture, rendertarget, texturearray
 
 #const hhkGraphics = "kinc/graphics4/graphics.h"
 
-import ../../kincbackends/graphics4/Direct3D11/Direct3D11
+#import ../../kincbackends/graphics4/Direct3D11/Direct3D11
+#import ../../kincbackends/graphics4/graphics4
 
 type 
   kinc_g4_texture_addressing_t* {.size: sizeof(cint).} = enum

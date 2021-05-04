@@ -1,11 +1,12 @@
 import utils/ptrops
 
-import kinc/graphics4/vertexstructure
-import kinc/graphics4/vertexbuffer
-import kinc/graphics4/graphics
-import kinc/graphics4/indexbuffer
-import kinc/graphics4/shader
-import kinc/graphics4/pipeline
+# import kinc/graphics4/vertexstructure
+# import kinc/graphics4/vertexbuffer
+# import kinc/graphics4/graphics
+# import kinc/graphics4/indexbuffer
+# import kinc/graphics4/shader
+# import kinc/graphics4/pipeline
+import g4
 import kinc/system
 import kinc/io/filereader
 
@@ -15,7 +16,6 @@ var
   pipe: kinc_g4_pipeline_t
   vertices: kinc_g4_vertex_buffer_t
   indices: kinc_g4_index_buffer_t
-
 
 const
   heapsize = 1024 * 1024

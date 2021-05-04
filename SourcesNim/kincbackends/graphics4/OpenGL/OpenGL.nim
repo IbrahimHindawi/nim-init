@@ -1,5 +1,6 @@
 
 import ../../../kinc/graphics4/vertexstructure
+#const libName = "KincOpenGL" & libExt
 
 # type
 #   kinc_g4_shader_impl_t* {.bycopy.} = object
