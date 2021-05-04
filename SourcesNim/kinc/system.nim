@@ -1,4 +1,4 @@
-import ../initializer
+import ../utils/comptime
 initialize("kinc/system.h","Kinc")
 
 import window

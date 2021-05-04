@@ -1,4 +1,4 @@
-import ../../initializer
+import ../../utils/comptime
 initialize("kinc/graphics4/pipeline.h","Kinc")
 
 import vertexstructure
@@ -91,9 +91,9 @@ type
     stencil_attachment_bits*: cint
     conservative_rasterization: bool 
     when defined(dynamic):
-        impl*:kinc_g4_pipeline_impl_t
+      impl*:kinc_g4_pipeline_impl_t
     when defined(codegen):
-        #echo "codegen: definition omitted!"
+      #echo "codegen: definition omitted!"
 
 proc kinc_g4_pipeline_init*(state: ptr kinc_g4_pipeline_t)
     {.importc: "kinc_g4_pipeline_init".}

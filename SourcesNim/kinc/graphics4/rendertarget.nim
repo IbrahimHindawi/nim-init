@@ -1,4 +1,4 @@
-import ../../initializer
+import ../../utils/comptime
 initialize("kinc/graphics4/rendertarget.h","Kinc")
 
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11

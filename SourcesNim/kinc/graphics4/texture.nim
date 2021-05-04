@@ -1,4 +1,4 @@
-import ../../initializer
+import ../../utils/comptime
 initialize("kinc/graphics4/texture.h","Kinc")
 
 import ../image

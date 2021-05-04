@@ -11,14 +11,14 @@ echo "executing nimscript"
 #switch("cincludes","../lib/cSpecOps/mathOps")
 #switch("cincludes","../lib/cSpecOps/logOps")
 
-# operating systems
+# codegen compiler operating systems
 #switch("os","android")
 
-# cpu architectures
+# codegen compiler cpu architectures
 #switch("cpu","arm64")
 
-# compiler
-switch("cc","vcc")
+# codegen compiler
+#switch("cc","vcc")
 
 #[
   compile time switching

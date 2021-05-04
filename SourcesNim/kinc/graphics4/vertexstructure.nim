@@ -1,4 +1,4 @@
-import ../../initializer
+import ../../utils/comptime
 initialize("kinc/graphics4/vertexstructure.h","Kinc")
 
 const kinc_g4_max_vertex_elements = 16

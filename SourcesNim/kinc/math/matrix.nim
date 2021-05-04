@@ -1,4 +1,4 @@
-import ../../initializer
+import ../../utils/comptime
 initialize("kinc/math/matrix.h","Kinc")
 
 type

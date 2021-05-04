@@ -1,4 +1,4 @@
-import ../initializer
+import ../utils/comptime
 initialize("kinc/window.h","Kinc")
 
 const kinc_window_feature_resizeable* = 1

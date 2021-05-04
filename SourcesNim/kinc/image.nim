@@ -1,4 +1,4 @@
-import ../initializer
+import ../utils/comptime
 initialize("kinc/image.h","Kinc")
 
 #const hhkImage = "kinc/image.h"

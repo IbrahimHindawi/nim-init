@@ -13,7 +13,7 @@
 #nim_enter()
 
 
-import ptrops
+import utils/ptrops
 
 import kinc/graphics4/vertexstructure
 import kinc/graphics4/vertexbuffer

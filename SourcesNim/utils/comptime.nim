@@ -10,3 +10,4 @@ template initialize*(headerName: string, dynlibName: string) =
     {.push dynlib: dynlibName & libExt.}
   elif defined(codegen):
     {.push header: headerName.}
+

@@ -1,4 +1,4 @@
-import ../../initializer
+import ../../utils/comptime
 initialize("kinc/graphics4/graphics.h","Kinc")
 
 import pipeline, ../math/matrix, texture, rendertarget, texturearray

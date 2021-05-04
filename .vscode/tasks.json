@@ -5,9 +5,27 @@
             "label": "Nim: Build & Run",
             "command": "nim",
             "args": [
+                "Scripts/run.nims"
+            ],
+            "dependsOn": [
+                "Nim: Build"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Nim: Build",
+            "command": "nim",
+            "args": [
                 "c",
                 "-d:dynamic",
-                "-r",
                 "SourcesNim/${fileBasename}"
             ],
             "options": {
@@ -17,7 +35,8 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         },
         {
             "label": "Nim: Pre-Build Debug",
@@ -40,7 +59,7 @@
             "args": [
                 "compile",
                 "--compileOnly",
-                "--nimcache:cache",               
+                "--nimcache:cache",
                 "-d:codegen",
                 "--noMain",
                 "--header:${fileBasename}",
