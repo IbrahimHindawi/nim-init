@@ -19,7 +19,6 @@ type
         KINC_WINDOW_MODE_WINDOW,
         KINC_WINDOW_MODE_FULLSCREEN,
         KINC_WINDOW_MODE_EXCLUSIVE_FULLSCREEN # Only relevant for Windows 
-
     kinc_window_options_t* {.bycopy.} = object
         title*: cstring
         x*:cint 
