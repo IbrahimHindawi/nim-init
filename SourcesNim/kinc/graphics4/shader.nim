@@ -6,7 +6,7 @@ initialize("kinc/graphics4/shader.h","Kinc")
 # type
 #   kinc_g4_shader_impl_t* {.bycopy.} = object
 
-
+import ../../kincbackends/graphics4/Direct3D11/Direct3D11
 
 type 
   kinc_g4_shader_type_t* {.bycopy.} = enum
@@ -19,7 +19,7 @@ type
     when defined(dynamic):
       impl*:kinc_g4_shader_impl_t
     when defined(codegen):
-      echo "codegen: definition omitted!"
+      #echo "codegen: definition omitted!"
 
 
 proc kinc_g4_shader_init*(shader: ptr kinc_g4_shader_t, data: pointer, length: csize_t, tipe:kinc_g4_shader_type_t)

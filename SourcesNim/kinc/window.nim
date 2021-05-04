@@ -15,7 +15,7 @@ type
         depth_bits*:cint 
         stencil_bits*:cint 
         samples_per_pixel*:cint 
-    Kinc_window_mode* {.importc:"kinc_window_mode_t".} = enum
+    kinc_window_mode_t* {.importc:"kinc_window_mode_t".} = enum
         KINC_WINDOW_MODE_WINDOW,
         KINC_WINDOW_MODE_FULLSCREEN,
         KINC_WINDOW_MODE_EXCLUSIVE_FULLSCREEN # Only relevant for Windows 
@@ -29,4 +29,4 @@ type
         display_index*:cint 
         visible*:bool 
         window_features*:cint 
-        mode*: Kinc_window_mode
+        mode*: kinc_window_mode_t

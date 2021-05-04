@@ -4,12 +4,12 @@ initialize("kinc/image.h","Kinc")
 #const hhkImage = "kinc/image.h"
 
 type 
-    KincImageCompression* {.importc:"enum kinc_image_compression".} = enum
+    KincImageCompression* {.importc:"kinc_image_compression_t".} = enum
         kincImageCompressionNone,
         kincImageCompressionDXT5,
         kincImageCompressionASTC,
         kincImageCompressionVRTC    
-    KincImageFormat* {.importc:"enum kinc_image_format".} = enum
+    kinc_image_format_t* {.importc:"kinc_image_format_t".} = enum
         kincImageFormatRGBA32, 
         kincImageFormatGrey8,
         kincImageFormatRGB24,
@@ -19,7 +19,7 @@ type
         kincImageFormatA16
     kinc_image_t* {.importc:"kinc_image_t".} = object
         width, height, depth*: cint
-        format*: KincImageFormat
+        format*: kinc_image_format_t
         internal_format*: cuint
         compression*: KincImageCompression
         data*: pointer

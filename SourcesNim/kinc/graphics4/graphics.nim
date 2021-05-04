@@ -4,33 +4,33 @@ initialize("kinc/graphics4/graphics.h","Kinc")
 import pipeline, ../math/matrix, texture, rendertarget, texturearray
 
 #const hhkGraphics = "kinc/graphics4/graphics.h"
-
+import ../../kincbackends/graphics4/Direct3D11/Direct3D11
 
 type 
-    kinc_g4_texture_addressing_t* = enum
-        kincG4TextureAddressingRepeat,
-        kincG4TextureAddressingMirror,
-        kincG4TextureAddressingClamp,
-        kincG4TextureAddressingBorder
-    kinc_g4_texture_direction_t* = enum
-        kincG4TextureDirection_U,
-        kincG4TextureDirection_V,
-        kincG4TextureDirection_W
-    kinc_g4_texture_operation_t* = enum
-        kincG4TextureOperationModulate,
-        kincG4TextureOperationSelectFirst,
-        kincG4TextureOperationSelectSecond
-    kinc_g4_texture_argument_t* = enum
-        kincG4TextureArgumentCurrentColor,
-        kincG4TextureArgumentTextureColor
-    kinc_g4_texture_filter_t* = enum
-        kincG4TextureFilterPoint,
-        kincG4TextureFilterLinear,
-        kincG4TextureFilterAnisotropic
-    kinc_g4_mipmap_filter_t* = enum
-        kincG4MipmapFilterNone,
-        kincG4MipmapFilterPoint,
-        kincG4MipmapFilterLinear # linear texture filter + linear mip filter -> trilinear filter
+  kinc_g4_texture_addressing_t* {.size: sizeof(cint).} = enum
+    KINC_G4_TEXTURE_ADDRESSING_REPEAT, 
+    KINC_G4_TEXTURE_ADDRESSING_MIRROR,
+    KINC_G4_TEXTURE_ADDRESSING_CLAMP, 
+    KINC_G4_TEXTURE_ADDRESSING_BORDER
+  kinc_g4_texture_direction_t* {.size: sizeof(cint).} = enum
+    KINC_G4_TEXTURE_DIRECTION_U, 
+    KINC_G4_TEXTURE_DIRECTION_V,
+    KINC_G4_TEXTURE_DIRECTION_W
+  kinc_g4_texture_operation_t* {.size: sizeof(cint).} = enum
+    KINC_G4_TEXTURE_OPERATION_MODULATE, 
+    KINC_G4_TEXTURE_OPERATION_SELECT_FIRST,
+    KINC_G4_TEXTURE_OPERATION_SELECT_SECOND
+  kinc_g4_texture_argument_t* {.size: sizeof(cint).} = enum
+    KINC_G4_TEXTURE_ARGUMENT_CURRENT_COLOR,
+    KINC_G4_TEXTURE_ARGUMENT_TEXTURE_COLOR
+  kinc_g4_texture_filter_t* {.size: sizeof(cint).} = enum
+    KINC_G4_TEXTURE_FILTER_POINT, 
+    KINC_G4_TEXTURE_FILTER_LINEAR,
+    KINC_G4_TEXTURE_FILTER_ANISOTROPIC
+  kinc_g4_mipmap_filter_t* {.size: sizeof(cint).} = enum
+    KINC_G4_MIPMAP_FILTER_NONE, 
+    KINC_G4_MIPMAP_FILTER_POINT, 
+    KINC_G4_MIPMAP_FILTER_LINEAR ##  linear texture filter + linear mip filter -> trilinear filter
 
 let kinc_g4_clear_color*:uint = 1
 let kinc_g4_clear_depth*:uint = 2
