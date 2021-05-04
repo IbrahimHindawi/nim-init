@@ -13,7 +13,10 @@ import rendertarget
 #    Kinc_g4_constant_location* {.importc:"kinc_g4_constant_location_t", header: hhkCLoc.} = object
 #    Kinc_g4_texture_unit* {.importc:"kinc_g4_texture_unit_t", header: hhkCLoc.} = object
 
+# when defined(Direct3D11):
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11
+# elif defined(OpenGL):
+# import ../../kincbackends/graphics4/OpenGL/OpenGL
 
 
 type
@@ -90,9 +93,9 @@ type
     depth_attachment_bits*: cint
     stencil_attachment_bits*: cint
     conservative_rasterization: bool 
-    when defined(dynamic):
-      impl*:kinc_g4_pipeline_impl_t
-    when defined(codegen):
+    # when defined(dynamic):
+    impl*:kinc_g4_pipeline_impl_t
+    # when defined(codegen):
       #echo "codegen: definition omitted!"
 
 proc kinc_g4_pipeline_init*(state: ptr kinc_g4_pipeline_t)

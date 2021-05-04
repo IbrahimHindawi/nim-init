@@ -2,7 +2,10 @@ import ../../utils/comptime
 initialize("kinc/graphics4/vertexbuffer.h","Kinc")
 
 import vertexstructure
+# when defined(Direct3D11):
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11
+# when defined(OpenGL):
+#import ../../kincbackends/graphics4/OpenGL/OpenGL
 
 type 
   kinc_g4_usage_t* {.bycopy.} = enum
@@ -10,9 +13,9 @@ type
     KINC_G4_USAGE_DYNAMIC,
     KINC_G4_USAGE_READABLE
   kinc_g4_vertex_buffer_t* {.bycopy.} = object
-    when defined(dynamic):
-      impl*: kinc_g4_vertex_buffer_impl_t    
-    when defined(codegen):
+    # when defined(dynamic):
+    impl*: kinc_g4_vertex_buffer_impl_t    
+    # when defined(codegen):
       #echo "codegen: definition omitted!"
 
 

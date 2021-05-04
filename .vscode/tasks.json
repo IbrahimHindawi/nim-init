@@ -24,9 +24,7 @@
             "label": "Nim: Build",
             "command": "nim",
             "args": [
-                "c",
-                "-d:dynamic",
-                "SourcesNim/${fileBasename}"
+                "Scripts/build.nims"
             ],
             "options": {
                 "cwd": "${workspaceRoot}"

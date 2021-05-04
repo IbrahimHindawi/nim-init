@@ -2,8 +2,10 @@ import ../../utils/comptime
 initialize("kinc/graphics4/texturearray.h","Kinc")
 
 import ../image
+# when defined(Direct3D11):
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11
-#const hhkTextureA = "kinc/graphics4/texturearray.h"
+# elif defined(OpenGL):
+#import ../../kincbackends/graphics4/OpenGL/OpenGL
 
 type
   kinc_g4_texture_array_t* {.importc:"kinc_g4_texture_array_t".} = object

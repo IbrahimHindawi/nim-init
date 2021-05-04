@@ -2,7 +2,10 @@ import ../../utils/comptime
 initialize("kinc/graphics4/texture.h","Kinc")
 
 import ../image
+# when defined(Direct3D11):
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11
+# elif defined(OpenGL):
+#import ../../kincbackends/graphics4/OpenGL/OpenGL
 
 
 type

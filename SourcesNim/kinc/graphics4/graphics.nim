@@ -4,6 +4,7 @@ initialize("kinc/graphics4/graphics.h","Kinc")
 import pipeline, ../math/matrix, texture, rendertarget, texturearray
 
 #const hhkGraphics = "kinc/graphics4/graphics.h"
+
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11
 
 type 

@@ -1,7 +1,10 @@
 import ../../utils/comptime
 initialize("kinc/graphics4/rendertarget.h","Kinc")
 
+# when defined(Direct3D11):
 import ../../kincbackends/graphics4/Direct3D11/Direct3D11
+# elif defined(OpenGL):
+#import ../../kincbackends/graphics4/OpenGL/OpenGL
 
 type
   kinc_g4_render_target_format_t* {.size: sizeof(cint).} = enum
