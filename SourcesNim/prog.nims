@@ -13,12 +13,14 @@ echo "executing nimscript"
 
 # codegen compiler operating systems
 #switch("os","android")
+#switch("define","androidNDK")
 
 # codegen compiler cpu architectures
 #switch("cpu","arm64")
 
 # codegen compiler
 #switch("cc","vcc")
+#switch("cc","clang")
 
 #[
   compile time switching
