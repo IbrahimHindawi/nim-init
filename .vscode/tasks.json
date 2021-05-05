@@ -59,6 +59,7 @@
                 "compile",
                 "--compileOnly",
                 "--nimcache:cache",
+                "-d:OpenGL",
                 "-d:codegen",
                 "--noMain",
                 "--header:${fileBasename}",

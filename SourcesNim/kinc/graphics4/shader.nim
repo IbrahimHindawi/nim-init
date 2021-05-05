@@ -24,3 +24,10 @@ type
 
 proc kinc_g4_shader_init*(shader: ptr kinc_g4_shader_t, data: pointer, length: csize_t, tipe:kinc_g4_shader_type_t)
   {.importc:"kinc_g4_shader_init".}
+proc kinc_g4_shader_init_from_source*(shader: ptr kinc_g4_shader_t; source: cstring;
+                                     `type`: kinc_g4_shader_type_t) {.
+    importc: "kinc_g4_shader_init_from_source".}
+##  Beware, this is not portable
+
+proc kinc_g4_shader_destroy*(shader: ptr kinc_g4_shader_t) {.
+    importc: "kinc_g4_shader_destroy".}  

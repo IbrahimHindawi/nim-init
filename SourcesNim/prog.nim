@@ -1,12 +1,12 @@
 import utils/ptrops
 
-# import kinc/graphics4/vertexstructure
-# import kinc/graphics4/vertexbuffer
-# import kinc/graphics4/graphics
-# import kinc/graphics4/indexbuffer
-# import kinc/graphics4/shader
-# import kinc/graphics4/pipeline
-import g4
+import kinc/graphics4/vertexstructure
+import kinc/graphics4/vertexbuffer
+import kinc/graphics4/graphics
+import kinc/graphics4/indexbuffer
+import kinc/graphics4/shader
+import kinc/graphics4/pipeline
+#import g4
 import kinc/system
 import kinc/io/filereader
 
